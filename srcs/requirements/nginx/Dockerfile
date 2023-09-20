@@ -6,7 +6,7 @@ RUN mkdir -p /etc/nginx/ssl
 
 RUN apt install openssl -y
 
-RUN openssl req -x509 -nodes -out /etc/nginx/ssl/hgeissle.crt -keyout /etc/nginx/ssl/hgeissle.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=login.42.fr/UID=login"
+RUN openssl req -x509 -nodes -out /etc/nginx/ssl/hgeissle.crt -keyout /etc/nginx/ssl/hgeissle.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=hgeissle.42.fr/UID=hgeissle"
 
 RUN mkdir -p /var/run/nginx
 

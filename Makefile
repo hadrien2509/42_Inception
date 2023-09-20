@@ -1,16 +1,28 @@
 all: up
 
 prepare:
-	@mkdir -p /Users/hgeissle/data/mariadb
-	@mkdir -p /Users/hgeissle/data/wordpress
+	@mkdir -p /home/hadrien/data/mariadb
+	@mkdir -p /home/hadrien/data/wordpress
+
+mariadb:
+	@sudo docker build -t mariadb ./srcs/requirements/mariadb/
+	@sudo docker run -it mariadb
+
+nginx:
+	@sudo docker build -t nginx ./srcs/requirements/nginx/
+	@sudo docker run -it nginx
+
+wordpress:
+	@sudo docker build -t wordpress ./srcs/requirements/wordpress/
+	@sudo docker run -it wordpress
 
 build:
-	@docker-compose -f srcs/docker-compose.yml build
+	@sudo docker-compose -f srcs/docker-compose.yml build
 
 up: prepare build
-	@docker-compose -f srcs/docker-compose.yml up -d
+	@sudo docker-compose -f srcs/docker-compose.yml up -d
 
 clean:
-	@sh ./srcs/destroy.sh
+	@sudo sh ./srcs/destroy.sh
 
-.PHONY: all prepare build up clean
+.PHONY: all prepare mariadb nginx wordpress build up clean
