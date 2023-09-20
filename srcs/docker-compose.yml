@@ -3,6 +3,7 @@ version: '3'
 services:
   mariadb:
     container_name: mariadb
+    image: mariadb
     networks:
       - inception
     build:
@@ -16,6 +17,7 @@ services:
       - "3306"
   nginx:
     container_name: nginx
+    image: nginx
     ports:
       - "443:443"
     networks:
@@ -31,6 +33,7 @@ services:
     restart: on-failure
   wordpress:
     container_name: wordpress
+    image: wordpress
     networks:
       - inception
     build:
@@ -50,13 +53,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /Users/hadri/Documents/mariadb
+      device: /Users/hgeissle/data/mariadb
       o: bind
   wordpress:
     driver: local
     driver_opts:
       type: none
-      device: /Users/hadri/Documents/wordpress
+      device: /Users/hgeissle/data/wordpress
       o: bind
 
 networks:
