@@ -1,8 +1,8 @@
 all: up
 
 prepare:
-	@mkdir -p /home/hadrien/data/mariadb
-	@mkdir -p /home/hadrien/data/wordpress
+	@sudo mkdir -p /home/hadrien/data/mariadb
+	@sudo mkdir -p /home/hadrien/data/wordpress
 
 mariadb:
 	@sudo docker build -t mariadb ./srcs/requirements/mariadb/
@@ -17,7 +17,7 @@ wordpress:
 	@sudo docker run -it wordpress
 
 build:
-	# @sudo docker-compose -f srcs/docker-compose.yml build
+	@sudo docker-compose -f srcs/docker-compose.yml build
 
 up: prepare build
 	@sudo docker-compose -f srcs/docker-compose.yml up -d
