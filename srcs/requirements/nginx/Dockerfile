@@ -10,11 +10,12 @@ RUN openssl req -x509 -nodes -out /etc/nginx/ssl/hgeissle.crt -keyout /etc/nginx
 
 RUN mkdir -p /var/run/nginx
 
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+RUN rm -rf /etc/nginx/sites-enabled/default
+COPY conf/nginx.conf /etc/nginx/sites-enabled/
 
-RUN chmod 755 /var/www/html
+# RUN chmod 755 /var/www/html
 
-RUN chown -R www-data:www-data /var/www/html
+# RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 443
 

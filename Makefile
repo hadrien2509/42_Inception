@@ -17,7 +17,7 @@ wordpress:
 	@sudo docker run -it wordpress
 
 build:
-	@sudo docker-compose -f srcs/docker-compose.yml build
+	# @sudo docker-compose -f srcs/docker-compose.yml build
 
 up: prepare build
 	@sudo docker-compose -f srcs/docker-compose.yml up -d
@@ -25,4 +25,6 @@ up: prepare build
 clean:
 	@sudo sh ./srcs/destroy.sh
 
-.PHONY: all prepare mariadb nginx wordpress build up clean
+re:	clean all
+
+.PHONY: all prepare mariadb nginx wordpress build up clean re
