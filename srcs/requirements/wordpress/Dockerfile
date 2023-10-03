@@ -1,11 +1,11 @@
 FROM debian:bullseye
 
 # Install packages
-RUN apt-get update && apt-get -y install wget \
-										php7.4 \
-										php-mysql \
-										php7.4-fpm \
-										mariadb-client
+RUN apt-get update && apt-get upgrade -y && apt-get -y install wget \
+														php7.4 \
+														php7.4-mysql \
+														php7.4-fpm \
+														mariadb-client
 
 
 RUN mkdir -p /var/www/wordpress
