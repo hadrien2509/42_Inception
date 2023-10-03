@@ -16,7 +16,7 @@ services:
       - wordpress:/var/www/wordpress
     depends_on:
       - wordpress
-    restart: on-failure
+    restart: always
   wordpress:
     container_name: wordpress
     image: wordpress
@@ -30,7 +30,7 @@ services:
       - wordpress:/var/www/wordpress
     depends_on:
       - mariadb
-    restart: on-failure
+    restart: unless-stopped
     expose:
       - "9000"
   mariadb:
