@@ -1,8 +1,8 @@
 all: up
 
 prepare:
-	@sudo mkdir -p /home/hadrien/data/mariadb
-	@sudo mkdir -p /home/hadrien/data/wordpress
+	@sudo mkdir -p /home/hgeissle/data/mariadb
+	@sudo mkdir -p /home/hgeissle/data/wordpress
 
 mariadb:
 	@sudo docker build -t mariadb ./srcs/requirements/mariadb/

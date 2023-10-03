@@ -53,13 +53,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/hadrien/data/mariadb
+      device: /home/hgeissle/data/mariadb
       o: bind
   wordpress:
     driver: local
     driver_opts:
       type: none
-      device: /home/hadrien/data/wordpress
+      device: /home/hgeissle/data/wordpress
       o: bind
 
 networks:

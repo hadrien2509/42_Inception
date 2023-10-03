@@ -6,4 +6,4 @@ docker volume rm $(docker volume ls -q) 2>/dev/null
 docker network rm $(docker network ls -q) 2>/dev/null
 docker system prune -a --volume 2>/dev/null
 docker system prune -a --force 2>/dev/null
-rm -rf /Users/hgeissle/data 2>/dev/null
+rm -rf /home/hgeissle/data 2>/dev/null
