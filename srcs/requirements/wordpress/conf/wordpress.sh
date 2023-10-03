@@ -2,7 +2,7 @@
 
 cd /var/www/wordpress
 
-if [ -f ./wp-config-sample.php ]
+if [ -f ./wp-config.php ]
 then
 	echo "Wordpress already installed!"
 
