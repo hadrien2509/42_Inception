@@ -1,11 +1,12 @@
 #!/bin/bash
 
+cd /var/www/wordpress
+
 if [ -f ./wp-config-sample.php ]
 then
 	echo "Wordpress already installed!"
 
 else
-	cd /var/www/wordpress
 	sleep 5
 	echo "=> Creating a new configuration file..."
 	wp config create \
