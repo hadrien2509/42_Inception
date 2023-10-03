@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# if [ ! -d "/var/www/wordpress" ]; then
-#   mkdir -p /var/www/wordpress
-# fi
-
-
 cd /var/www/wordpress
 sleep 5
 echo "=> Creating a new configuration file..."

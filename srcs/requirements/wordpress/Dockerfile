@@ -8,13 +8,9 @@ RUN apt-get update && apt-get -y install wget \
 										mariadb-client
 
 
-# Copy config files
-# RUN		chown -R root:root /var/www/wordpress
-
-# COPY	conf/wp-config.php /var/www/wordpress/wp-config.php
-
 RUN mkdir -p /var/www/wordpress
 
+# Download wordpress
 RUN wget https://wordpress.org/wordpress-6.3.1.tar.gz && \
 	tar -xvzf wordpress-6.3.1.tar.gz && \
 	rm -rf wordpress-6.3.1.tar.gz && \
@@ -22,6 +18,7 @@ RUN wget https://wordpress.org/wordpress-6.3.1.tar.gz && \
 
 RUN mkdir -p /run/php
 
+# Download wp-cli to manage wordpress installation
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
 	chmod +x wp-cli.phar && \
 	mv wp-cli.phar /usr/local/bin/wp
